@@ -1,10 +1,6 @@
 
 # Setup Docker Com Laravel 10 e  PHP 8.1
 
-### Passo a passo
-- Baixe o .Zip do projeto
-
-
 Crie o Arquivo .env
 ```sh
 cp .env.example .env
@@ -95,6 +91,3 @@ php artisan key:generate
 
 Acesse o projeto
 [http://localhost:8989](http://localhost:8989)
-
-
-github: https://github.com/VictorPadovan1997/setup-docker-laravel-10
