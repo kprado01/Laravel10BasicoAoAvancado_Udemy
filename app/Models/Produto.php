@@ -13,4 +13,16 @@ class Produto extends Model
         'nome',
         'valor'
     );
+
+
+    public function getProdutosPesquisarIndex(string $pesquisar = '')
+    {
+
+        return $this->where(function ($query) use ($pesquisar){
+            if($pesquisar){
+                $query->where('nome', $pesquisar);
+                $query->orWhere('nome', 'LIKE' , "%$pesquisar%");
+            }
+        })->get();
+    }
 }
