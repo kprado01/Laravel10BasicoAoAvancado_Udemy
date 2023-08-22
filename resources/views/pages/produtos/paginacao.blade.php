@@ -31,7 +31,7 @@
                             <td>{{ 'R$' . ' ' . number_format($produto->valor, 2, ",", ".")}}</td>
                             <td>
                                 <a href="#" class="btn btn-sm btn-secondary">Editar</a>
-                                <a href="{{route('produto.delete')}}" class="btn btn-sm btn-danger">Excluir</a>
+                                <a onclick="deleteRegistroPaginacao('{{route('produto.delete')}}', {{$produto->id}})" class="btn btn-sm btn-danger">Excluir</a>
                             </td>
                         </tr>
                     @endforeach
