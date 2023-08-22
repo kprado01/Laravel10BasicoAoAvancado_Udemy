@@ -222,9 +222,12 @@
         </div>
     </div>
     @yield('scripts')
+    <script src=""></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="{{asset('js/bundle.min.js')}}"></script>
     <script src="{{asset('js/color-modes.js')}}"></script>
     <script src="{{asset('js/chart.umd.min.js')}}"></script>
     <script src="{{asset('js/dashboard.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
     </body>
     </html>
