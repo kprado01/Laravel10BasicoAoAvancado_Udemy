@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FormRequestProduto;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 
@@ -24,6 +25,23 @@ class ProdutosController extends Controller
 
     public function delete(Request $request)
     {
+        $id = $request->id;
+        $produto = Produto::find($id);
+        $produto->delete();
+        return response()->json(['success' => true]);
+    }
 
+    public function cadastrarProduto(FormRequestProduto $request)
+    {
+        if($request->method() == "GET"){
+            return view('pages.produtos.create');
+        }
+        $nome = htmlspecialchars($request->nome);
+
+        $valor = filter_var($request->valor, FILTER_VALIDATE_FLOAT);
+
+        Produto::create(["nome" => $nome, "valor" => $valor]);
+
+        return redirect()->route('produto.index');
     }
 }
