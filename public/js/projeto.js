@@ -31,5 +31,6 @@ function deleteRegistroPaginacao(rotaUrl, idRegistro){
     }
 }
 
-
-$('mascara_valor').mask('#.##0,00',{reverse: true })
+$(document).ready(function() {
+    $('#mascara_valor').mask('000.000.000,00', {reverse: true});
+});

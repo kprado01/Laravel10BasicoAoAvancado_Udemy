@@ -30,7 +30,7 @@
                             <td>{{$produto->nome}}</td>
                             <td>{{ 'R$' . ' ' . number_format($produto->valor, 2, ",", ".")}}</td>
                             <td>
-                                <a href="#" class="btn btn-sm btn-secondary">Editar</a>
+                                <a href="{{route('produto.atualizarProduto', $produto->id)}}" class="btn btn-sm btn-secondary">Editar</a>
                                 <meta name="csrf-token" content="{{ csrf_token() }}" />
                                 <a onclick="deleteRegistroPaginacao('{{route('produto.delete')}}', {{$produto->id}})" class="btn btn-sm btn-danger">Excluir</a>
                             </td>
